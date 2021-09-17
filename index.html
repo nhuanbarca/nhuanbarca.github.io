@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -28,22 +29,23 @@
                 <li class="nav-list-item">
                     <span class="btn btn--normal block-item">MORE
                              <i class="fas fa-caret-down"></i>
-                            <ul class="subnav">
-                                <li class="subnav-item">
-                                    <a href="#" class="subnav-item__link  btn ">Merchandise</a>
-                                </li>
-                                <li class="subnav-item">
-                                    <a href="#" class="subnav-item__link btn ">Extras</a>
-                                </li>
-                                <li class="subnav-item">
-                                    <a href="#" class="subnav-item__link  btn ">Media</a>
-                                </li>
-                            </ul>  
                     </span>
+                    <ul class="subnav">
+                        <li class="subnav-item">
+                            <a href="#" class="subnav-item__link  btn ">Merchandise</a>
+                        </li>
+                        <li class="subnav-item">
+                            <a href="#" class="subnav-item__link btn ">Extras</a>
+                        </li>
+                        <li class="subnav-item">
+                            <a href="#" class="subnav-item__link  btn ">Media</a>
+                        </li>
+                    </ul>  
                    
                 </li>
             </ul>
-            <button class="btn  nav-button-search"><i class="fas fa-search"></i></button>
+            <button type="button" class="btn nav-button-search"><i class="fas fa-search"></i></button>
+            <button id="menu" type="button" class="btn mobile-toggle-icon"><i class="fas fa-bars"></i></button>
         </nav>
 
         <div id="slider">
@@ -185,6 +187,27 @@
         </div>
 
     </div>
+    <script>
+        const navbar = document.getElementById('navbar');
+        const menu = document.getElementById('menu');
+        const navbarHeight = navbar.clientHeight;
 
+        menu.onclick = function(){
+            const isClose = navbar.clientHeight === navbarHeight;
+            if(isClose){
+                navbar.style.height = 'auto';
+            } else{
+                navbar.style.height = null;
+            }
+        }
+        const listItemLinks = document.querySelectorAll('.nav-list-item__link')
+        for(var i = 0; i < listItemLinks.length; i++){
+            const itemLink = listItemLinks[i];
+            itemLink.onclick = function() {
+                navbar.style.height = null;
+            }
+        }
+
+    </script>
 </body>
 </html>

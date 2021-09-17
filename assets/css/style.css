@@ -16,14 +16,14 @@
     z-index: 1;
     left: 0;
     right: 0;
-    align-items: center;
+    height: 47.755px;
     justify-content: space-between;
 }
 .nav-list{
     display: flex;
+    height: 100%;
     align-items: center;
 }
-
 
 .nav-list-item:last-child{
     position: relative;
@@ -36,7 +36,7 @@
 #navbar .block-item{
     font-size: 1.6rem;
     padding: 16px 24px;
-    border-radius: 3px;
+
 }
 #navbar .block-item i{
     line-height: 1.6rem;
@@ -46,7 +46,9 @@
     top: 100%;
     left: 0;
     display: none;
+    font-size: 1.6rem;
     min-width: 160px;
+
 }
 .subnav-item .subnav-item__link{
     background-color: var(--while-color);
@@ -60,21 +62,33 @@
     color:#333;
 
 }
-.block-item:hover  .subnav{
+.nav-list-item:last-child:hover  .subnav{
     display: block;
 }
+#navbar .mobile-toggle-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#navbar .mobile-toggle-icon,
 #navbar .nav-button-search{
     background-color: #000;
     color: white;
     padding: 15px 24px;
+    line-height: 1.6rem;
+    font-size: 1.8rem;
 }
+
 #navbar .nav-button-search:hover{
     background-color: red;
     color: #fff;
 }
-#navbar .nav-button-search i{
-    line-height: 1.6rem;
-    font-size: 1.8rem;
+#navbar .mobile-toggle-icon:hover{
+    background-color: grey;
+}
+#navbar .mobile-toggle-icon:hover i{
+    color: #333;
+    
 }
 
 
@@ -135,11 +149,12 @@
 .about-members{
     margin-top: 74px;
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    padding: 0 20px;
+    justify-content: space-between;
 }
 .about-info{
-    width: 18%;
+    flex: 1;
+    margin: 0 10px;
 }
 .about-info__name{
     font-size: 1.6rem;
@@ -162,6 +177,7 @@
     margin-right: auto;
     width: 800px;
     max-width: 100%;
+    padding: 0 16px;
 }
 .tour__heading{
     font-size: 3.2rem;
@@ -220,7 +236,10 @@
     margin-top: 30px;
 }
 .city-wrapper{
-    width: 32%;
+    flex: 1;
+}
+.city-wrapper:nth-child(2){
+    margin: 0 16px;
 }
 .city__img{
     padding-top: 75%;
